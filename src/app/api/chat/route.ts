@@ -1,5 +1,7 @@
-import { buildSystemPrompt, DEMO_REPLY } from "@/lib/prompts";
+import { getUiCopy } from "@/lib/i18n";
+import { isLocale, LOCALE_ENGLISH_NAME, type Locale } from "@/lib/locales";
 import { getModel, getOpenAIClient, hasApiKey } from "@/lib/openai";
+import { buildSystemPrompt } from "@/lib/prompts";
 import { isMode, isTone, type ChatMessage, type Mode, type Tone } from "@/lib/types";
 
 export const runtime = "nodejs";
@@ -61,26 +63,26 @@ export async function POST(request: Request) {
     messages?: unknown;
     mode?: unknown;
     tone?: unknown;
+    uiLocale?: unknown;
   };
 
   const mode: Mode = isMode(payload.mode) ? payload.mode : "chat";
   const tone: Tone = isTone(payload.tone) ? payload.tone : "teen";
+  const uiLocale: Locale = isLocale(payload.uiLocale) ? payload.uiLocale : "en";
+  const copy = getUiCopy(uiLocale);
   const messages = sanitizeMessages(payload.messages);
 
   if (messages.length === 0) {
-    return Response.json(
-      { error: "Type a message or pick a prompt so I know where to start." },
-      { status: 400 },
-    );
+    return Response.json({ error: copy.genericError }, { status: 400 });
   }
 
   if (!hasApiKey()) {
-    return streamPlainText(DEMO_REPLY[mode], { "X-Venture-Demo": "1" });
+    return streamPlainText(copy.demoReply[mode], { "X-Venture-Demo": "1" });
   }
 
   const client = getOpenAIClient();
   if (!client) {
-    return streamPlainText(DEMO_REPLY[mode], { "X-Venture-Demo": "1" });
+    return streamPlainText(copy.demoReply[mode], { "X-Venture-Demo": "1" });
   }
 
   const maxTokens = mode === "stories" ? 700 : mode === "learn" ? 450 : 550;
@@ -93,7 +95,7 @@ export async function POST(request: Request) {
       temperature,
       max_tokens: maxTokens,
       messages: [
-        { role: "system", content: buildSystemPrompt(mode, tone) },
+        { role: "system", content: buildSystemPrompt(mode, tone, LOCALE_ENGLISH_NAME[uiLocale]) },
         ...messages,
       ],
     });

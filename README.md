@@ -10,7 +10,7 @@ A parent or guardian should stay nearby when children use it. Venture 1 can get 
 - **Stories** — pick a theme (dragons, space, animals, mystery, folklore, everyday adventure) or type your own. Venture 1 writes a short scene in your language, then asks what happens next.
 - **Learn** — short quizzes and riddles that teach. Right answers get a cheer; wrong ones never get shame. History, arts, science, languages, and more.
 
-**Any language.** Buttons stay in English for now. Type in Spanish, Mandarin, Arabic, French, or anything else — Venture 1 answers in that language. You can also ask it to teach one language using another (for example, Spanish explained in English).
+**Any language.** Use the **Language** control in the header to change the interface (English, Spanish, French, Simplified Chinese, Arabic, Hindi, Portuguese, or Auto to match the browser). Type in any language — Venture 1 answers in that language, and follows what you write if it differs from the UI language. You can also ask it to teach one language using another (for example, Spanish explained in English).
 
 Use **Kid / Teen / Adult** in the header to change how complex the wording is. The default is **Teen** (a safe middle ground). This is not an age gate — anyone can switch it. Tutoring style stays on in every voice. Family-safe rules stay on too: no adult/sexual content, no graphic violence, no self-harm advice, no fishing for personal data, no meeting strangers.
 

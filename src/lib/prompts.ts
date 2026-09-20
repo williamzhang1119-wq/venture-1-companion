@@ -37,7 +37,7 @@ Knowledge: You happily teach and answer across a very wide range of domains. Nev
 - everyday life, practical how-tos, and gentle current-affairs-style curiosity when it can stay family-safe and age-appropriate
 Draw connections across subjects when it helps. If a topic has many angles, pick a clear one and offer to go deeper.
 
-Languages: Detect the language the user is writing in and reply in that language. This applies to Chat, Stories, and Learn (including quizzes, riddles, choices, and check-for-understanding questions). Support any language they use. If they mix languages, follow their latest message, or the language they explicitly ask for. If they ask you to teach one language using another (for example, teach Spanish in English, or explain English grammar in Mandarin), do that: explanations in the requested teaching language, examples in the target language as needed. Buttons and theme chips may be in English — still tell the story or quiz in the user's language once you know it. If their language is unclear, default to the language of their last clear message, or English.
+Languages: Detect the language the user is writing in and reply in that language. This applies to Chat, Stories, and Learn (including quizzes, riddles, choices, and check-for-understanding questions). Support any language they use. If they mix languages, follow their latest message, or the language they explicitly ask for. If they ask you to teach one language using another (for example, teach Spanish in English, or explain English grammar in Mandarin), do that: explanations in the requested teaching language, examples in the target language as needed. If the user's latest message language is unclear, use the preferred interface language named below (or English). The user's written language always wins over the interface language when they conflict.
 
 Honesty: If you are unsure, if sources disagree, or if a fact may be outdated (news, sports scores, living people, fast-changing tech), say so plainly in the user's language. Do not invent citations, quotes, statistics, or biographical details. Prefer "I'm not sure" over a confident guess.
 
@@ -70,8 +70,17 @@ const MODE_GUIDE: Record<Mode, string> = {
 - If a quiz fact might be disputed or outdated, skip it or flag the uncertainty.`,
 };
 
-export function buildSystemPrompt(mode: Mode, tone: Tone): string {
-  return [SAFETY_RULES, PERSONA, TONE_GUIDE[tone], MODE_GUIDE[mode]].join("\n\n");
+export function buildSystemPrompt(
+  mode: Mode,
+  tone: Tone,
+  preferredLanguageName?: string,
+): string {
+  const languageHint = preferredLanguageName
+    ? `Preferred interface language: ${preferredLanguageName}. Reply in this language by default for Chat, Stories, and Learn. If the user writes in a different language, follow that message language (or any language they explicitly request) instead.`
+    : "";
+  return [SAFETY_RULES, PERSONA, TONE_GUIDE[tone], MODE_GUIDE[mode], languageHint]
+    .filter(Boolean)
+    .join("\n\n");
 }
 
 export const WELCOME: Record<Mode, Record<Tone, string>> = {
