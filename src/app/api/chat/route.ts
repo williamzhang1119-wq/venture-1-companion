@@ -75,12 +75,12 @@ export async function POST(request: Request) {
   }
 
   if (!hasApiKey()) {
-    return streamPlainText(DEMO_REPLY[mode], { "X-Nova-Demo": "1" });
+    return streamPlainText(DEMO_REPLY[mode], { "X-Venture-Demo": "1" });
   }
 
   const client = getOpenAIClient();
   if (!client) {
-    return streamPlainText(DEMO_REPLY[mode], { "X-Nova-Demo": "1" });
+    return streamPlainText(DEMO_REPLY[mode], { "X-Venture-Demo": "1" });
   }
 
   const maxTokens = mode === "stories" ? 700 : mode === "learn" ? 450 : 550;
@@ -110,7 +110,7 @@ export async function POST(request: Request) {
           const fallback =
             "I hit a snag talking to the language model. Check the API key, model name, and base URL, then try again.";
           controller.enqueue(encoder.encode(fallback));
-          console.error("Nova stream error:", error);
+          console.error("Venture 1 stream error:", error);
         } finally {
           controller.close();
         }
@@ -124,7 +124,7 @@ export async function POST(request: Request) {
       },
     });
   } catch (error) {
-    console.error("Nova chat error:", error);
+    console.error("Venture 1 chat error:", error);
     const message =
       error instanceof Error && error.message.includes("API key")
         ? "The API key was rejected. Double-check OPENAI_API_KEY (and OPENAI_BASE_URL if you use another provider)."

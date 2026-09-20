@@ -1,13 +1,13 @@
-# Nova
+# Venture 1
 
-Nova is a family-friendly AI companion for **all ages**. Chat, make short interactive stories, or play simple quizzes and riddles — with a safety-first voice that stays appropriate for a shared family device.
+Venture 1 is a family-friendly AI companion for **all ages**. Chat, make short interactive stories, or play simple quizzes and riddles — with a safety-first voice that stays appropriate for a shared family device.
 
-A parent or guardian should stay nearby when children use it. Nova can get facts wrong.
+A parent or guardian should stay nearby when children use it. Venture 1 can get facts wrong.
 
 ## What you can do
 
-- **Chat** — talk with Nova about everyday questions, ideas, and curiosity.
-- **Stories** — pick a theme (dragons, space, animals, mystery, folklore, everyday adventure) or type your own. Nova writes a short scene, then asks what happens next.
+- **Chat** — talk with Venture 1 about everyday questions, ideas, and curiosity.
+- **Stories** — pick a theme (dragons, space, animals, mystery, folklore, everyday adventure) or type your own. Venture 1 writes a short scene, then asks what happens next.
 - **Learn** — short quizzes and riddles on animals, numbers, space, kindness, science, and wordplay. Right answers get a cheer; wrong ones never get shame.
 
 Use **Kid / Teen / Adult** in the header to change how complex the language is. The default is **Teen** (a safe middle ground). This is not an age gate — anyone can switch it. Family-safe rules stay on in every voice: no adult/sexual content, no graphic violence, no self-harm advice, no fishing for personal data, no meeting strangers.
@@ -41,7 +41,7 @@ You need [Node.js 20+](https://nodejs.org/) and an API key from [OpenAI](https:/
 
 3. Open [http://127.0.0.1:43123](http://127.0.0.1:43123).
 
-Without an API key, the app still loads. Nova will send a short demo reply instead of a live model response, so you can click around safely.
+Without an API key, the app still loads. Venture 1 will send a short demo reply instead of a live model response, so you can click around safely.
 
 ### Production-style start
 
@@ -75,12 +75,12 @@ Railway injects `PORT`. The container listens on `0.0.0.0` so the proxy can reac
 ### Docker on your machine (optional)
 
 ```bash
-docker build -t nova .
+docker build -t venture-1 .
 docker run --rm -p 43123:43123 \
   -e PORT=43123 \
   -e OPENAI_API_KEY=sk-your-key-here \
   -e OPENAI_MODEL=gpt-4o-mini \
-  nova
+  venture-1
 ```
 
 Then visit [http://127.0.0.1:43123](http://127.0.0.1:43123).
@@ -88,7 +88,7 @@ Then visit [http://127.0.0.1:43123](http://127.0.0.1:43123).
 ## Safety notes
 
 - There is no login in this first version. Treat a public URL like a shared demo: anyone with the link can talk to your key's model, so keep the Railway app private or add your own access control later if you need it.
-- Nova is instructed not to ask for real names, addresses, schools, or phone numbers. Still remind kids not to share those.
+- Venture 1 is instructed not to ask for real names, addresses, schools, or phone numbers. Still remind kids not to share those.
 - Model safety is not perfect. Supervision matters more than the prompt.
 
 ## Project layout

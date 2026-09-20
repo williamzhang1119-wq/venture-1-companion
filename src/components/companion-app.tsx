@@ -62,7 +62,7 @@ const TONE_META: Record<Tone, { label: string; hint: string }> = {
   adult: { label: "Adult", hint: "A bit more depth" },
 };
 
-const TONE_EVENT = "nova-tone-change";
+const TONE_EVENT = "venture-1-tone-change";
 
 function subscribeTone(onChange: () => void) {
   window.addEventListener(TONE_EVENT, onChange);
@@ -74,16 +74,16 @@ function subscribeTone(onChange: () => void) {
 }
 
 function readTone(): Tone {
-  const saved = window.localStorage.getItem("nova-tone");
+  const saved = window.localStorage.getItem("venture-1-tone");
   return isTone(saved) ? saved : "teen";
 }
 
 function writeTone(next: Tone) {
-  window.localStorage.setItem("nova-tone", next);
+  window.localStorage.setItem("venture-1-tone", next);
   window.dispatchEvent(new Event(TONE_EVENT));
 }
 
-function NovaMark({ className = "" }: { className?: string }) {
+function VentureMark({ className = "" }: { className?: string }) {
   return (
     <span
       className={`inline-flex items-center justify-center rounded-2xl bg-linear-to-br from-teal-500 to-sky-600 text-white shadow-md shadow-teal-700/20 ${className}`}
@@ -158,7 +158,7 @@ export function CompanionApp() {
         throw new Error(data?.error || "Something went wrong. Please try again.");
       }
 
-      if (response.headers.get("X-Nova-Demo") === "1") {
+      if (response.headers.get("X-Venture-Demo") === "1") {
         setDemoNotice(true);
         setLive(false);
       }
@@ -208,14 +208,14 @@ export function CompanionApp() {
   }
 
   return (
-    <div className="nova-bg flex min-h-dvh flex-col">
+    <div className="venture-bg flex min-h-dvh flex-col">
       <header className="border-b border-white/60 bg-white/70 px-4 py-3 backdrop-blur-md sm:px-6">
         <div className="mx-auto flex w-full max-w-4xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <NovaMark className="size-11" />
+            <VentureMark className="size-11" />
             <div>
               <p className="font-heading text-xl font-semibold tracking-tight text-slate-800">
-                Nova
+                Venture 1
               </p>
               <p className="text-sm text-slate-600">
                 Family-friendly companion for all ages
@@ -281,7 +281,7 @@ export function CompanionApp() {
         {live === false && (
           <div className="mb-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-950">
             Live replies need an <strong>OPENAI_API_KEY</strong>. Until that is
-            set, Nova uses a short demo message. Add the key locally or in
+            set, Venture 1 uses a short demo message. Add the key locally or in
             Railway to chat for real.
           </div>
         )}
@@ -305,7 +305,7 @@ export function CompanionApp() {
 
               {busy && messages[messages.length - 1]?.role !== "assistant" ? (
                 <MessageBubble role="assistant">
-                  <span className="inline-flex gap-1 py-1" aria-label="Nova is typing">
+                  <span className="inline-flex gap-1 py-1" aria-label="Venture 1 is typing">
                     <span className="size-2 animate-bounce rounded-full bg-teal-500 [animation-delay:-0.2s]" />
                     <span className="size-2 animate-bounce rounded-full bg-sky-500 [animation-delay:-0.1s]" />
                     <span className="size-2 animate-bounce rounded-full bg-amber-500" />
@@ -383,7 +383,7 @@ export function CompanionApp() {
                 rows={2}
                 disabled={busy}
                 maxLength={4000}
-                aria-label="Message for Nova"
+                aria-label="Message for Venture 1"
               />
               <div className="flex flex-col gap-2">
                 <Button
@@ -411,7 +411,7 @@ export function CompanionApp() {
         </section>
 
         <p className="mt-4 px-1 pb-2 text-center text-sm leading-relaxed text-slate-600">
-          A parent or guardian should stay nearby when kids use Nova. This is a
+          A parent or guardian should stay nearby when kids use Venture 1. This is a
           family-safe companion, not a substitute for a person — and AI can
           make mistakes. Don&apos;t share your real name, address, school, or
           phone number.
@@ -436,7 +436,7 @@ function MessageBubble({
           You
         </span>
       ) : (
-        <NovaMark className="mt-1 size-9 shrink-0" />
+        <VentureMark className="mt-1 size-9 shrink-0" />
       )}
       <div
         className={`max-w-[min(100%,38rem)] rounded-3xl px-4 py-3 text-base leading-relaxed whitespace-pre-wrap ${
