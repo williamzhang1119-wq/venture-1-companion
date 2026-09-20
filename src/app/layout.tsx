@@ -13,9 +13,9 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Venture 1 — family-friendly companion",
+  title: "Venture 1 — all-ages multilingual tutor",
   description:
-    "Chat, stories, and quizzes with Venture 1 — a family-safe companion with wide knowledge for all ages.",
+    "Venture 1 is a family-safe personal tutor for all ages. Chat, stories, and quizzes in any language.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

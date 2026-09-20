@@ -41,17 +41,17 @@ const MODE_META: Record<
 > = {
   chat: {
     label: "Chat",
-    hint: "Talk about anything family-safe",
+    hint: "Tutor chat in any language",
     icon: MessageCircle,
   },
   stories: {
     label: "Stories",
-    hint: "Short tales you help steer",
+    hint: "Stories you help steer",
     icon: BookOpen,
   },
   learn: {
     label: "Learn",
-    hint: "Quizzes and riddles",
+    hint: "Quizzes that teach",
     icon: GraduationCap,
   },
 };
@@ -218,7 +218,7 @@ export function CompanionApp() {
                 Venture 1
               </p>
               <p className="text-sm text-slate-600">
-                Family-safe companion · wide knowledge
+                All-ages tutor · any language
               </p>
             </div>
           </div>
@@ -377,7 +377,7 @@ export function CompanionApp() {
                     ? "What happens next?"
                     : mode === "learn"
                       ? "Your answer, or pick a topic…"
-                      : "Say hello, ask a question, or share an idea…"
+                      : "Ask to learn something — any language…"
                 }
                 className="min-h-14 resize-none rounded-2xl border-slate-200 bg-white px-4 py-3 text-base shadow-inner md:text-base"
                 rows={2}
@@ -412,9 +412,9 @@ export function CompanionApp() {
 
         <p className="mt-4 px-1 pb-2 text-center text-sm leading-relaxed text-slate-600">
           A parent or guardian should stay nearby when kids use Venture 1. This is a
-          family-safe companion, not a substitute for a person — and AI can
-          make mistakes. Don&apos;t share your real name, address, school, or
-          phone number.
+          family-safe tutor, not a substitute for a teacher or a person — and AI can
+          make mistakes. Write in any language. Don&apos;t share your real name,
+          address, school, or phone number.
         </p>
       </main>
     </div>

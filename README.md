@@ -1,16 +1,18 @@
 # Venture 1
 
-Venture 1 is a family-friendly AI companion for **all ages**, with a wide knowledge range — science, nature, history, arts, sports, school subjects, how things work, and more — plus Chat, short interactive stories, and simple quizzes, in a safety-first voice for a shared family device.
+Venture 1 is an **all-ages multilingual tutor**: a family-safe personal teacher for science, nature, history, arts, sports, school subjects, languages, how things work, and more. Use Chat, short interactive stories, and simple quizzes. It replies in the language you write in.
 
 A parent or guardian should stay nearby when children use it. Venture 1 can get facts wrong.
 
 ## What you can do
 
-- **Chat** — talk with Venture 1 about everyday questions, school subjects, how things work, culture, hobbies, and curiosity across many fields.
-- **Stories** — pick a theme (dragons, space, animals, mystery, folklore, everyday adventure) or type your own. Venture 1 writes a short scene, then asks what happens next.
-- **Learn** — short quizzes and riddles on animals, numbers, space, kindness, science, wordplay, history, and arts. Right answers get a cheer; wrong ones never get shame.
+- **Chat** — learn or talk with a tutor: step-by-step explanations, examples, and a check that you follow. Homework help, how things work, culture, hobbies, and curiosity across many fields.
+- **Stories** — pick a theme (dragons, space, animals, mystery, folklore, everyday adventure) or type your own. Venture 1 writes a short scene in your language, then asks what happens next.
+- **Learn** — short quizzes and riddles that teach. Right answers get a cheer; wrong ones never get shame. History, arts, science, languages, and more.
 
-Use **Kid / Teen / Adult** in the header to change how complex the language is. The default is **Teen** (a safe middle ground). This is not an age gate — anyone can switch it. Family-safe rules stay on in every voice: no adult/sexual content, no graphic violence, no self-harm advice, no fishing for personal data, no meeting strangers.
+**Any language.** Buttons stay in English for now. Type in Spanish, Mandarin, Arabic, French, or anything else — Venture 1 answers in that language. You can also ask it to teach one language using another (for example, Spanish explained in English).
+
+Use **Kid / Teen / Adult** in the header to change how complex the wording is. The default is **Teen** (a safe middle ground). This is not an age gate — anyone can switch it. Tutoring style stays on in every voice. Family-safe rules stay on too: no adult/sexual content, no graphic violence, no self-harm advice, no fishing for personal data, no meeting strangers.
 
 ## Run it on your computer
 
