@@ -6,9 +6,9 @@ A parent or guardian should stay nearby when children use it. Venture 1 can get 
 
 ## What you can do
 
-- **Chat** — learn or talk with a tutor: step-by-step explanations, examples, and a check that you follow. Homework help, how things work, culture, hobbies, and curiosity across many fields.
+- **Chat** — learn or talk with a tutor. Everyday curiosity can get a clear answer; for homework, quizzes, math, or “what’s the answer,” Venture 1 hints first and lets you try before explaining.
 - **Stories** — pick a theme (dragons, space, animals, mystery, folklore, everyday adventure) or type your own. Venture 1 writes a short scene in your language, then asks what happens next.
-- **Learn** — short quizzes and riddles that teach. Right answers get a cheer; wrong ones never get shame. History, arts, science, languages, and more.
+- **Learn** — short quizzes and riddles. Hints first; the full answer comes after you attempt (or you ask to see it). Wrong guesses never get shame.
 
 **Any language.** Use the **Language** control in the header to change the interface (English, Spanish, French, Simplified Chinese, Arabic, Hindi, Portuguese, or Auto to match the browser). Type in any language — Venture 1 answers in that language, and follows what you write if it differs from the UI language. You can also ask it to teach one language using another (for example, Spanish explained in English).
 
