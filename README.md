@@ -1,14 +1,14 @@
 # Venture 1
 
-Venture 1 is a family-friendly AI companion for **all ages**. Chat, make short interactive stories, or play simple quizzes and riddles — with a safety-first voice that stays appropriate for a shared family device.
+Venture 1 is a family-friendly AI companion for **all ages**, with a wide knowledge range — science, nature, history, arts, sports, school subjects, how things work, and more — plus Chat, short interactive stories, and simple quizzes, in a safety-first voice for a shared family device.
 
 A parent or guardian should stay nearby when children use it. Venture 1 can get facts wrong.
 
 ## What you can do
 
-- **Chat** — talk with Venture 1 about everyday questions, ideas, and curiosity.
+- **Chat** — talk with Venture 1 about everyday questions, school subjects, how things work, culture, hobbies, and curiosity across many fields.
 - **Stories** — pick a theme (dragons, space, animals, mystery, folklore, everyday adventure) or type your own. Venture 1 writes a short scene, then asks what happens next.
-- **Learn** — short quizzes and riddles on animals, numbers, space, kindness, science, and wordplay. Right answers get a cheer; wrong ones never get shame.
+- **Learn** — short quizzes and riddles on animals, numbers, space, kindness, science, wordplay, history, and arts. Right answers get a cheer; wrong ones never get shame.
 
 Use **Kid / Teen / Adult** in the header to change how complex the language is. The default is **Teen** (a safe middle ground). This is not an age gate — anyone can switch it. Family-safe rules stay on in every voice: no adult/sexual content, no graphic violence, no self-harm advice, no fishing for personal data, no meeting strangers.
 

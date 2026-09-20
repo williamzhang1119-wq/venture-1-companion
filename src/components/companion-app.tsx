@@ -218,7 +218,7 @@ export function CompanionApp() {
                 Venture 1
               </p>
               <p className="text-sm text-slate-600">
-                Family-friendly companion for all ages
+                Family-safe companion · wide knowledge
               </p>
             </div>
           </div>
