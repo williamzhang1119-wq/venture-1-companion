@@ -9,7 +9,6 @@ import {
   type ReactNode,
 } from "react";
 import { Button } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
 import {
   CHAT_STARTERS,
@@ -294,7 +293,7 @@ export function CompanionApp() {
         ) : null}
 
         <section className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-3xl border border-white/80 bg-white/80 shadow-xl shadow-teal-900/5">
-          <ScrollArea className="h-[min(58dvh,560px)] sm:h-[min(62dvh,640px)]">
+          <div className="h-[min(58dvh,560px)] overflow-y-auto overscroll-contain sm:h-[min(62dvh,640px)]">
             <div className="flex flex-col gap-4 p-4 sm:p-6">
               <MessageBubble role="assistant">{welcome}</MessageBubble>
 
@@ -332,7 +331,7 @@ export function CompanionApp() {
 
               <div ref={bottomRef} />
             </div>
-          </ScrollArea>
+          </div>
 
           {messages.length > 0 && (
             <div className="flex gap-2 overflow-x-auto border-t border-slate-100 px-4 py-3">
