@@ -20,6 +20,7 @@ import {
 } from "@/lib/locales";
 import type { ChatMessage, Mode, Tone } from "@/lib/types";
 import { isTone } from "@/lib/types";
+import { MessageContent } from "@/components/message-content";
 import {
   BookOpen,
   GraduationCap,
@@ -335,11 +336,22 @@ export function CompanionApp() {
                 {welcome}
               </MessageBubble>
 
-              {messages.map((message, index) => (
-                <MessageBubble key={`${mode}-${index}`} role={message.role} youLabel={copy.you}>
-                  {message.content || (busy && index === messages.length - 1 ? "…" : "")}
-                </MessageBubble>
-              ))}
+              {messages.map((message, index) => {
+                const streaming =
+                  busy &&
+                  index === messages.length - 1 &&
+                  message.role === "assistant";
+                return (
+                  <MessageBubble
+                    key={`${mode}-${index}`}
+                    role={message.role}
+                    youLabel={copy.you}
+                    streaming={streaming}
+                  >
+                    {message.content || (streaming ? "…" : "")}
+                  </MessageBubble>
+                );
+              })}
 
               {busy && messages[messages.length - 1]?.role !== "assistant" ? (
                 <MessageBubble role="assistant" youLabel={copy.you}>
@@ -454,10 +466,12 @@ function MessageBubble({
   role,
   children,
   youLabel,
+  streaming = false,
 }: {
   role: ChatMessage["role"];
   children: ReactNode;
   youLabel: string;
+  streaming?: boolean;
 }) {
   const isUser = role === "user";
   return (
@@ -470,13 +484,21 @@ function MessageBubble({
         <VentureMark className="mt-1 size-9 shrink-0" />
       )}
       <div
-        className={`max-w-[min(100%,38rem)] rounded-3xl px-4 py-3 text-base leading-relaxed whitespace-pre-wrap ${
+        className={`max-w-[min(100%,38rem)] overflow-x-auto rounded-3xl px-4 py-3 text-base leading-relaxed ${
           isUser
             ? "bg-teal-700 text-white"
             : "bg-slate-50 text-slate-800 ring-1 ring-slate-200/80"
         }`}
       >
-        {children}
+        {typeof children === "string" ? (
+          <MessageContent
+            markdown={children}
+            variant={isUser ? "user" : "assistant"}
+            streaming={streaming}
+          />
+        ) : (
+          children
+        )}
       </div>
     </div>
   );
